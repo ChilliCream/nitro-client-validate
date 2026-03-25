@@ -11,6 +11,8 @@ A GitHub Action that validates client operations against the Nitro registry.
     client-id: <client-id>
     api-key: <api-key>
     operations-file: ./path/to/operations.json
+    # Optional
+    cloud-url: <cloud-url>
 ```
 
 ## Inputs
