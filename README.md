@@ -12,7 +12,7 @@ A GitHub Action that validates client operations against the Nitro registry.
     api-key: <api-key>
     operations-file: ./path/to/operations.json
     # Optional
-    commentMode: none
+    comment-mode: none
     cloud-url: <cloud-url>
 ```
 
@@ -24,20 +24,20 @@ A GitHub Action that validates client operations against the Nitro registry.
 | `client-id`       | Yes      | The ID of the client                                                            |
 | `api-key`         | Yes      | API key for authentication                                                      |
 | `operations-file` | Yes      | The path to the JSON file with the operations                                   |
-| `commentMode`     | No       | Pull request feedback mode on failure: `comment`, `review`, or `none` (default) |
+| `comment-mode`    | No       | Pull request feedback mode on failure: `comment`, `review`, or `none` (default) |
 | `cloud-url`       | No       | The URL of the Nitro registry                                                   |
 
 If you self-host Nitro or use a dedicated hosted instance, you can specify the `cloud-url` input to point to your instance.
 
 ## Pull Request comments
 
-Use `commentMode` to control pull request feedback behavior.
+Use `comment-mode` to control pull request feedback behavior.
 
-`commentMode: comment` comments on the pull request - requires `issues: write` permissions
+`comment-mode: comment` comments on the pull request - requires `issues: write` permissions
 
-`commentMode: review` creates a pull request review with a comment - requires `pull-requests: write` permissions
+`comment-mode: review` creates a pull request review with a comment - requires `pull-requests: write` permissions
 
-Example for `commentMode: comment`:
+Example for `comment-mode: comment`:
 
 ```yaml
 jobs:
@@ -47,7 +47,7 @@ jobs:
       issues: write
 ```
 
-Example for `commentMode: review`:
+Example for `comment-mode: review`:
 
 ```yaml
 jobs:
