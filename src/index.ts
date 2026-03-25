@@ -1,6 +1,9 @@
 import * as core from "@actions/core";
 import * as exec from "@actions/exec";
-import { installNitro } from "@chillicream/nitro-github-actions";
+import {
+  installNitro,
+  getCommentMode,
+} from "@chillicream/nitro-github-actions";
 import pkg from "../package.json" with { type: "json" };
 
 const nitroVersion: string = pkg.version;
@@ -12,6 +15,7 @@ async function executeCommand(): Promise<void> {
     const apiKey = core.getInput("api-key", { required: true });
     const operationsFile = core.getInput("operations-file", { required: true });
     const cloudUrl = core.getInput("cloud-url") || null;
+    getCommentMode();
 
     const args: string[] = [
       "client",
